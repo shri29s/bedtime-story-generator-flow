@@ -1,0 +1,80 @@
+version: "0.0.3"
+
+metadata:
+  name: "bedtime-story-generator"
+  description: "Parents can input what their child did that day, and the AI spins a whimsical story where they are the hero."
+  author: "shricharan"
+  tags: ["bedtime", "story", "ai", "interactive", "creative"]
+  private: false
+  readme: |
+    # AI Bedtime Story Generator
+
+    A whimsical story creator that turns your child's day into a personalized adventure.
+
+    ## Features
+
+    - Customized stories featuring your child as the hero
+    - Integration of favorite characters into the narrative
+    - Stories based on the child's daily activities
+    - Adjustable mood and length options
+    - Easy-to-use interface for parents
+
+    ## How to Use
+
+    1. Enter your child's name
+    2. List their favorite characters
+    3. Describe their day's activities
+    4. Choose the desired story mood (e.g., calming, adventurous)
+    5. Select story length (short or long)
+    6. Click "Generate Story" to receive a unique tale
+
+inputs:
+  child-name:
+    type: string
+    description: "Name of the child"
+    required: true
+    example: "John, Bob, Charlie"
+  favorite-character:
+    type: string
+    description: "Favorite character of the child"
+    required: true
+    example: "Superman, Spiderman, Batman, Unicorn"
+  activities:
+    type: string
+    description: "What activities did your child do today?"
+    required: true
+    example: "Went to the park and met a dog"
+  mood:
+    type: string
+    description: "Mood of the story"
+    required: true
+    example: "happy, calming, excited"
+  length:
+    type: string
+    description: "Length of the story"
+    required: true
+    example: "short, medium, long"
+
+model:
+  provider: "openai"
+  name: "gpt-4o"
+  purpose: "Storytelling and content creation"
+  tags:
+    - "interactive"
+    - "creative"
+    - "child-friendly"
+    - "personalized"
+    - "engaging"
+
+prompt: |
+  You are an expert in writing bedtime stories for kids. You will generate a bedtime story that meets the requirements.
+
+  Create a bedtime story for a child named {child-name}. The child’s favorite character is {favorite-character}, and today they did the following: {activities}. The story should be {mood} and {length}. Include interactive choices like:
+  1. What happens next?
+  2. Which path should they take?
+
+  End the story with a calming, positive conclusion.
+
+  Consider the following:
+  - The child is the hero of the story.
+  - The story should be engaging and according to the mood {mood}.
