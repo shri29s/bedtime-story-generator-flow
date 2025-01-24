@@ -60,5 +60,9 @@ The story includes moments like:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/bedtime-story-generator.git
+   git clone https://github.com/shri29s/bedtime-story-generator-flow.git
+   ```
+2. Install dependencies:
+   ```bash
+   pip install .
    ```
